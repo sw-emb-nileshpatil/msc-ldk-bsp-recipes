@@ -1,16 +1,18 @@
-# List of kernel patches
-
 KERVER = "5.10"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${KERVER}:"
 
 SRC_URI += " \
-		file://0001-Added-peripheral-support-for-sm2s-rzg2ul-board.patch \
-		file://0001-MTD-SPI-NOR-Added-support-for-at25sf321-nor-flash.patch \
-		file://0001-sm2s-rzg2ul-Added-required-changes-for-eth-qspi-cloc.patch  \
-		file://0001-sm2s-rzg2ul-Added-WiFi-BT-support.patch \
-		file://0001-sm2s-rzg2ul-Added-ush-sd-card-modes.patch \
 		file://sm2s.cfg \
 "
+KERNEL_URL = "git://github.com/sw-emb-anilpatel/linux-renesas.git;protocol=https"
+
+#BRANCH = "msc-renesas-develop"
+#SRCREV = "825c409e3003e425b69140105dfba8f978bd81d7"
+
+KERNEL_VERSION_SANITY_SKIP="1"
+
+KERNEL_DTC_FLAGS += "-@"
 
 KERNEL_CONFIG_FRAGMENTS_append = " ${WORKDIR}/sm2s.cfg"
+
