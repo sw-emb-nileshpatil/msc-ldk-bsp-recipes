@@ -1,4 +1,4 @@
-# Copyright (C) 2022 AVNET Embedded, MSC Technologies GmbH
+# Copyright (C) 2023 AVNET Embedded, MSC Technologies GmbH
 
 BRANCH = "msc-renesas_v2021.10_5_10_develop"
 
